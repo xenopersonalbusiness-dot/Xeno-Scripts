@@ -1,0 +1,10 @@
+name = "access-keys"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+# Create this KV namespace with:
+#   npx wrangler kv namespace create KEYS
+# then paste the returned "id" below.
+[[kv_namespaces]]
+binding = "KEYS"
+id = "PASTE_YOUR_KV_NAMESPACE_ID_HERE"

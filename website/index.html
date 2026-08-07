@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCESS — Server Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+  <span class="topbar-mark">◆ ACCESS</span>
+  <span class="topbar-clock" id="clock">--:--:--</span>
+</header>
+
+<main class="panel">
+
+  <!-- LEFT: LIVE -->
+  <section class="pane pane-live">
+    <div class="pane-label">
+      <span class="dot" id="statusDot"></span>
+      <span>01 — KEY</span>
+    </div>
+
+    <h1 class="server-name" id="serverName">LOADING SERVER…</h1>
+    <p class="server-sub" id="serverSub">Connecting to widget…</p>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-value" id="statOnline">—</span>
+        <span class="stat-label">Online now</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="statTotal">—</span>
+        <span class="stat-label">Members</span>
+      </div>
+    </div>
+
+    <a class="join-btn fx" id="joinBtn" href="#" target="_blank" rel="noopener">
+      Join the server →
+    </a>
+  </section>
+
+  <!-- DIVIDER: perforated ticket edge -->
+  <div class="perforation" aria-hidden="true"></div>
+
+  <!-- RIGHT: ACCESS -->
+  <section class="pane pane-access">
+    <div class="pane-label">
+      <span>02 — ACCESS KEY</span>
+    </div>
+
+    <p class="access-copy">
+      Generate a temporary key. It unlocks access for
+      <strong>24 hours</strong>, then it's dead on its own — nothing to revoke.
+    </p>
+
+    <div class="key-card" id="keyCard">
+      <div class="key-card-row">
+        <span class="key-card-label">KEY</span>
+        <span class="key-card-value" id="keyValue">••••••••••••••••</span>
+      </div>
+      <div class="key-card-row">
+        <span class="key-card-label">EXPIRES</span>
+        <span class="key-card-value" id="keyExpires">—</span>
+      </div>
+      <div class="key-bar-track">
+        <div class="key-bar-fill" id="keyBarFill"></div>
+      </div>
+    </div>
+
+    <button class="generate-btn fx" id="generateBtn">Generate key</button>
+    <button class="copy-btn fx" id="copyBtn" disabled>Copy key</button>
+    <p class="access-note" id="accessNote">No key issued yet.</p>
+  </section>
+
+</main>
+
+<!-- SCROLL DOWN: SCRIPTS -->
+<section class="scripts-section">
+  <div class="pane-label section-label">
+    <span>02 — SCRIPTS</span>
+  </div>
+
+  <h2 class="scripts-title">Pick a game</h2>
+  <p class="scripts-copy">Tap a card to open its loader.</p>
+
+  <div class="cube-grid" id="cubeGrid">
+    <!-- cube cards are injected by script.js from the GAMES list -->
+  </div>
+</section>
+
+<!-- Script modal -->
+<div class="script-modal" id="scriptModal" aria-hidden="true">
+  <div class="script-modal-backdrop" id="modalBackdrop"></div>
+  <div class="script-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalGameName">
+    <button class="modal-close fx" id="modalClose" aria-label="Close">✕</button>
+
+    <img class="modal-image" id="modalImage" src="" alt="">
+
+    <div class="modal-header">
+      <h2 id="modalGameName">Game name</h2>
+      <button class="copy-script-btn fx" id="copyScriptBtn">Copy script</button>
+    </div>
+
+    <p class="modal-hint">Paste the loader below into your executor.</p>
+    <pre class="script-block"><code id="modalScriptCode"></code></pre>
+  </div>
+</div>
+
+<footer class="footer">
+  <span>Keys are single-use tickets, not accounts. Don't share yours.</span>
+  <a class="credit" href="https://discord.com/users/1243988171025420425" target="_blank" rel="noopener">
+    Brought to you by <strong>! Xeno</strong> — @xenobouthere2
+  </a>
+</footer>
+
+<button class="sound-toggle fx" id="soundToggle" aria-pressed="true" title="Toggle sound effects">
+  SFX: ON
+</button>
+
+<canvas id="cursorFx"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>

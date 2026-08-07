@@ -1,0 +1,60 @@
+Jujutsu Legacy Features
+Farming features
+-Auto quest                                                                                                                                                                    -Selective farming
+-Farming options
+Auto Moves
+Auto Stats
+Farming Tool Selection
+Refresh Tool dropdown
+Useful options
+Technique Spinner Options
+-Select Techique
+-Star spins
+-Auto Reffill Spins
+Vessel Options
+-Vessel equip
+-Equip Vessel
+Session
+Session Stats
+-Honor
+-Money
+-Items found
+Misc Options
+-Reddeem All Actives Codes 
+
+
+Bizarre Lineage Features
+--FEATURES--
+AUTO FARMS
+-Auto Farm Bosses 
+-Safe Mode
+-Auto Farm Arrows
+-Auto Spin For Stand
+
+RAIDS
+-Auto Raid (its pretty crappy but it still gets the job done)
+-Safe Mode Raid
+
+ESP
+-HIghlight 
+-Box ESP
+-Name ESP
+
+Universal Piece Features
+Features 
+-Auto Farm (with magnet and auto get quest)
+---Specialist quest settings--- 
+-quest take wait ( customisable for end game farm and stuff )
+-auto summon and farm Decay
+-auto summon and farm Ninth
+-Auto summon and farm Garou
+-Auto Hunter Heart (for Garou to spawn
+Stats
+-Auto Stats
+Misc
+-Auto Store/Drop Fruit
+-Auto Chest
+Black market and fruit stock buying crap
+Settings
+-Player name and distance esp
+-console window
