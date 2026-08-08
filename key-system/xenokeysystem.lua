@@ -6,14 +6,6 @@ Junkie.identifier = "1007847"
 Junkie.provider = "Key System"
 
 local WEBSITE_URL = "https://xenos-intestine.pages.dev"
-local SCRIPTS = {
-    [14890802310] = "https://raw.githubusercontent.com/xenopersonalbusiness-dot/Bizzare-Lineage/refs/heads/main/Main",
-    [74747090658891] = "https://raw.githubusercontent.com/xenopersonalbusiness-dot/Bizzare-Lineage/refs/heads/main/Main",
-    [130169555191153] = "https://raw.githubusercontent.com/xenopersonalbusiness-dot/universalpiece/refs/heads/main/main",
-    [15694107053] = "https://raw.githubusercontent.com/xenopersonalbusiness-dot/Jujutsu-Legacy/refs/heads/main/main",
-    [17889317592] = "https://raw.githubusercontent.com/xenopersonalbusiness-dot/Jujutsu-Legacy/refs/heads/main/main",
-    [18795268508] = "https://raw.githubusercontent.com/xenopersonalbusiness-dot/Jujutsu-Legacy/refs/heads/main/main",
-}
 
 local AUTH_DIR = "XenoKeySystem"
 local AUTH_FILE = "XenoKeySystem/auth_cache.json"
@@ -45,19 +37,13 @@ local function clearAuth()
     end)
 end
 
+local LAYER2 = "2d2d204c4159455220313a20536372697074206665746368657220776974682068696464656e20776562736974652055524c730a2d2d2054686973206973206f62667573636174656420696e746f204c6179657220320a0a6c6f63616c2042415345203d202268747470733a2f2f78656e6f732d696e74657374696e652e70616765732e6465762f6173736574732f646174612f736372697074732f220a6c6f63616c2053435249505453203d207b0a202020205b31343839303830323331305d203d2042415345202e2e2022612e62696e222c0a202020205b37343734373039303635383839315d203d2042415345202e2e2022612e62696e222c0a202020205b3133303136393535353139313135335d203d2042415345202e2e2022622e62696e222c0a202020205b31353639343130373035335d203d2042415345202e2e2022632e62696e222c0a202020205b31373838393331373539325d203d2042415345202e2e2022632e62696e222c0a202020205b31383739353236383530385d203d2042415345202e2e2022632e62696e222c0a202020205b363139383232353430305d203d2042415345202e2e2022612e62696e222c0a7d0a0a6c6f63616c20737263203d20534352495054535b67616d652e506c61636549645d0a696620737263207468656e0a202020206c6f63616c20636f6e74656e74203d2067616d653a4874747047657428737263290a202020206c6f6164737472696e6728636f6e74656e742928290a656e640a"
+local layer1Code = LAYER2:gsub("%x%x", function(h) return string.char(tonumber(h, 16)) end)
+
 local function loadGameScript()
-    local src = SCRIPTS[game.PlaceId]
-    if src then
-        loadstring(game:HttpGet(src))()
-    else
-        pcall(function()
-            local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
-            local W = Rayfield:CreateWindow({ Name = "Xeno's", KeySystem = false })
-            local T = W:CreateTab("Info", 4483362458)
-            T:CreateSection("Notice")
-            T:CreateParagraph({ Title = "Unsupported Game", Content = "This game is not supported yet." })
-        end)
-    end
+    pcall(function()
+        loadstring(layer1Code)()
+    end)
 end
 
 local function showFallbackGui(title, msg)
@@ -142,19 +128,6 @@ local function formatTimeLeft(seconds)
     else
         return string.format("%ds", secs)
     end
-end
-
-if not SCRIPTS[game.PlaceId] then
-    local Rayfield = safeLoadRayfield()
-    if Rayfield then
-        local W = Rayfield:CreateWindow({ Name = "Xeno's", KeySystem = false })
-        local T = W:CreateTab("Info", 4483362458)
-        T:CreateSection("Notice")
-        T:CreateParagraph({ Title = "Unsupported Game", Content = "This game is not supported. Join the Discord for updates." })
-    else
-        showFallbackGui("Unsupported Game", "This game is not supported. Join the Discord for updates.")
-    end
-    return
 end
 
 local cachedKey, cachedExpiresAt = getCachedKey()
